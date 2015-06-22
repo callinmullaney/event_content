@@ -25,10 +25,10 @@ function event_content_strongarm() {
           'weight' => '7',
         ),
         'redirect' => array(
-          'weight' => '5',
+          'weight' => '6',
         ),
         'xmlsitemap' => array(
-          'weight' => '4',
+          'weight' => '5',
         ),
       ),
       'display' => array(),
