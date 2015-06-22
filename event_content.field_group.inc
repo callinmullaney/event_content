@@ -111,6 +111,7 @@ function event_content_field_group_info() {
     'children' => array(
       0 => 'field_address',
       1 => 'field_geolocation',
+      2 => 'field_location',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

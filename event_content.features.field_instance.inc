@@ -54,63 +54,6 @@ function event_content_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_address'
-  $field_instances['node-event-field_address'] = array(
-    'bundle' => 'event',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'addressfield',
-        'settings' => array(
-          'format_handlers' => array(
-            0 => 'address',
-          ),
-          'use_widget_handlers' => 1,
-        ),
-        'type' => 'addressfield_default',
-        'weight' => 3,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_address',
-    'label' => 'Address',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'addressfield',
-      'settings' => array(
-        'available_countries' => array(
-          'US' => 'US',
-        ),
-        'default_country' => 'US',
-        'format_handlers' => array(
-          'address' => 'address',
-          'address-hide-country' => 'address-hide-country',
-          'address-hide-postal-code' => 0,
-          'address-hide-street' => 0,
-          'organisation' => 0,
-          'name-full' => 0,
-          'name-oneline' => 0,
-          'address-optional' => 0,
-        ),
-      ),
-      'type' => 'addressfield_standard',
-      'weight' => 6,
-    ),
-  );
-
   // Exported field_instance: 'node-event-field_date_time'
   $field_instances['node-event-field_date_time'] = array(
     'bundle' => 'event',
@@ -265,20 +208,20 @@ function event_content_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_geolocation'
-  $field_instances['node-event-field_geolocation'] = array(
+  // Exported field_instance: 'node-event-field_location'
+  $field_instances['node-event-field_location'] = array(
     'bundle' => 'event',
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'geofield',
+        'module' => 'entityreference',
         'settings' => array(
-          'data' => 'full',
+          'link' => FALSE,
         ),
-        'type' => 'geofield_wkt',
-        'weight' => 4,
+        'type' => 'entityreference_label',
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -288,34 +231,29 @@ function event_content_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_geolocation',
-    'label' => 'geolocation',
+    'field_name' => 'field_location',
+    'label' => 'Location',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'geocoder',
+      'module' => 'inline_entity_form',
       'settings' => array(
-        'delta_handling' => 'default',
-        'geocoder_field' => 'field_address',
-        'geocoder_handler' => 'google',
-        'handler_settings' => array(
-          'google' => array(
-            'all_results' => 0,
-            'geometry_type' => 'point',
-            'reject_results' => array(
-              'APPROXIMATE' => 0,
-              'GEOMETRIC_CENTER' => 0,
-              'RANGE_INTERPOLATED' => 0,
-              'ROOFTOP' => 0,
-            ),
-          ),
+        'fields' => array(),
+        'type_settings' => array(
+          'allow_existing' => FALSE,
+          'delete_references' => 0,
+          'instance_default_creation' => 0,
+          'label_plural' => 'Locations',
+          'label_singular' => 'Location',
+          'match_operator' => 'CONTAINS',
+          'override_labels' => 1,
         ),
       ),
-      'type' => 'geocoder',
-      'weight' => 7,
+      'type' => 'inline_entity_form_single',
+      'weight' => 8,
     ),
   );
 
@@ -395,14 +333,13 @@ function event_content_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Address');
   t('Body');
   t('Date/Time');
   t('Featured Image');
   t('File');
+  t('Location');
   t('Meta Description');
   t('Meta Keywords');
-  t('geolocation');
 
   return $field_instances;
 }
