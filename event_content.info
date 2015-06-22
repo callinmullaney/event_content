@@ -1,6 +1,7 @@
 name = Event Content
+description = Creates an Event content type.
 core = 7.x
-package = Features
+package = Content
 version = 7.x-1.0
 project = event_content
 dependencies[] = addressfield
