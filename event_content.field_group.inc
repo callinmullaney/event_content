@@ -23,7 +23,7 @@ function event_content_field_group_info() {
     'label' => 'Attachments',
     'weight' => '3',
     'children' => array(
-      0 => 'field_file_asset',
+      0 => 'field_file_assets',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -81,7 +81,7 @@ function event_content_field_group_info() {
     'label' => 'Imagery',
     'weight' => '1',
     'children' => array(
-      0 => 'field_featured_image',
+      0 => 'field_slide_assets',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -109,9 +109,8 @@ function event_content_field_group_info() {
     'label' => 'Location',
     'weight' => '2',
     'children' => array(
-      0 => 'field_address',
-      1 => 'field_geolocation',
-      2 => 'field_location',
+      0 => 'field_location',
+      1 => 'field_location_asset',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

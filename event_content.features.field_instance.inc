@@ -47,6 +47,7 @@ function event_content_field_default_field_instances() {
       'module' => 'text',
       'settings' => array(
         'rows' => 20,
+        'show_token_tree' => FALSE,
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
@@ -110,8 +111,8 @@ function event_content_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_featured_image'
-  $field_instances['node-event-field_featured_image'] = array(
+  // Exported field_instance: 'node-event-field_file_assets'
+  $field_instances['node-event-field_file_assets'] = array(
     'bundle' => 'event',
     'deleted' => 0,
     'description' => '',
@@ -123,7 +124,7 @@ function event_content_field_default_field_instances() {
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
-        'weight' => 1,
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -133,56 +134,7 @@ function event_content_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_featured_image',
-    'label' => 'Featured Image',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'inline_entity_form',
-      'settings' => array(
-        'fields' => array(),
-        'type_settings' => array(
-          'allow_existing' => 1,
-          'delete_references' => 0,
-          'instance_default_creation' => 0,
-          'label_plural' => 'Featured Images',
-          'label_singular' => 'Featured Image',
-          'match_operator' => 'CONTAINS',
-          'override_labels' => 1,
-        ),
-      ),
-      'type' => 'inline_entity_form',
-      'weight' => 2,
-    ),
-  );
-
-  // Exported field_instance: 'node-event-field_file_asset'
-  $field_instances['node-event-field_file_asset'] = array(
-    'bundle' => 'event',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 5,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_file_asset',
+    'field_name' => 'field_file_assets',
     'label' => 'File',
     'required' => 0,
     'settings' => array(
@@ -195,6 +147,8 @@ function event_content_field_default_field_instances() {
         'fields' => array(),
         'type_settings' => array(
           'allow_existing' => 1,
+          'allow_new' => 1,
+          'auto_title' => 0,
           'delete_references' => 0,
           'instance_default_creation' => 0,
           'label_plural' => 'Files',
@@ -204,12 +158,12 @@ function event_content_field_default_field_instances() {
         ),
       ),
       'type' => 'inline_entity_form',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
-  // Exported field_instance: 'node-event-field_location'
-  $field_instances['node-event-field_location'] = array(
+  // Exported field_instance: 'node-event-field_location_asset'
+  $field_instances['node-event-field_location_asset'] = array(
     'bundle' => 'event',
     'deleted' => 0,
     'description' => '',
@@ -221,7 +175,7 @@ function event_content_field_default_field_instances() {
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
-        'weight' => 8,
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -231,7 +185,7 @@ function event_content_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_location',
+    'field_name' => 'field_location_asset',
     'label' => 'Location',
     'required' => 0,
     'settings' => array(
@@ -243,7 +197,9 @@ function event_content_field_default_field_instances() {
       'settings' => array(
         'fields' => array(),
         'type_settings' => array(
-          'allow_existing' => FALSE,
+          'allow_existing' => 1,
+          'allow_new' => 1,
+          'auto_title' => 0,
           'delete_references' => 0,
           'instance_default_creation' => 0,
           'label_plural' => 'Locations',
@@ -252,8 +208,8 @@ function event_content_field_default_field_instances() {
           'override_labels' => 1,
         ),
       ),
-      'type' => 'inline_entity_form_single',
-      'weight' => 8,
+      'type' => 'inline_entity_form',
+      'weight' => 9,
     ),
   );
 
@@ -328,6 +284,57 @@ function event_content_field_default_field_instances() {
       'settings' => array(),
       'type' => 'metatags_quick_textfield',
       'weight' => 10,
+    ),
+  );
+
+  // Exported field_instance: 'node-event-field_slide_assets'
+  $field_instances['node-event-field_slide_assets'] = array(
+    'bundle' => 'event',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 9,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_slide_assets',
+    'label' => 'Featured Image',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'inline_entity_form',
+      'settings' => array(
+        'fields' => array(),
+        'type_settings' => array(
+          'allow_existing' => 1,
+          'allow_new' => 1,
+          'auto_title' => 0,
+          'delete_references' => 0,
+          'instance_default_creation' => 0,
+          'label_plural' => 'Featured Images',
+          'label_singular' => 'Featured Image',
+          'match_operator' => 'CONTAINS',
+          'override_labels' => 1,
+        ),
+      ),
+      'type' => 'inline_entity_form',
+      'weight' => 3,
     ),
   );
 
